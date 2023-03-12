@@ -1,5 +1,5 @@
-# Created by https://www.toptal.com/developers/gitignore/api/unity,visualstudio,visualstudiocode,windows,macos
-# Edit at https://www.toptal.com/developers/gitignore?templates=unity,visualstudio,visualstudiocode,windows,macos
+# Created by https://www.toptal.com/developers/gitignore/api/unity,windows,visualstudio,visualstudiocode,macos
+# Edit at https://www.toptal.com/developers/gitignore?templates=unity,windows,visualstudio,visualstudiocode,macos
 
 ### macOS ###
 # General
@@ -38,7 +38,7 @@ Temporary Items
 # This .gitignore file should be placed at the root of your Unity project directory
 #
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
-/[Ll]ibrary/
+[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
 /[Bb]uild/
@@ -533,4 +533,4 @@ FodyWeavers.xsd
 ### VisualStudio Patch ###
 # Additional files built by Visual Studio
 
-# End of https://www.toptal.com/developers/gitignore/api/unity,visualstudio,visualstudiocode,windows,macos
+# End of https://www.toptal.com/developers/gitignore/api/unity,windows,visualstudio,visualstudiocode,macos
