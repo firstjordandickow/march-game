@@ -6,12 +6,16 @@ public class Mover : MonoBehaviour
 {
 
     //Speed Variable
-   [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] float moveSpeed = 5.0f;
+
+    //Character Controller attached to the player game object
+    [SerializeField] CharacterController plCharacter;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        //assign the character controller on game object to the variable
+        plCharacter = this.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -24,7 +28,16 @@ public class Mover : MonoBehaviour
         float zVal = Input.GetAxis("Horizontal") * -moveSpeed * Time.deltaTime;
         float xVal = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
-        transform.Translate(xVal, 0, zVal);
+        Vector3 currentPos = transform.position;
+        Vector3 movement = new Vector3(xVal, 0f, zVal);
+
+        Vector3 postionToLookTowards = movement + currentPos;
+
+        transform.LookAt(postionToLookTowards);
+
+        plCharacter.Move(movement * moveSpeed * Time.deltaTime);
+
+        //transform.Translate(xVal, 0, zVal);
 
     }
 }
