@@ -7,6 +7,7 @@ public class Mover : MonoBehaviour
 
     //Speed Variable
     [SerializeField] float moveSpeed = 5.0f;
+    [SerializeField] Vector3 movement;
 
     //Character Controller attached to the player game object
     [SerializeField] CharacterController plCharacter;
@@ -29,15 +30,12 @@ public class Mover : MonoBehaviour
         float xVal = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
 
         Vector3 currentPos = transform.position;
-        Vector3 movement = new Vector3(xVal, 0f, zVal);
+        movement = new Vector3(xVal, 0f, zVal);
 
         Vector3 postionToLookTowards = movement + currentPos;
 
         transform.LookAt(postionToLookTowards);
 
         plCharacter.Move(movement * moveSpeed * Time.deltaTime);
-
-        //transform.Translate(xVal, 0, zVal);
-
     }
 }
